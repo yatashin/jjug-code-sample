@@ -1,4 +1,4 @@
-package com.samurai;
+package com.samurai.before;
 
 import java.time.DayOfWeek;
 import java.time.LocalDate;

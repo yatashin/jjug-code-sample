@@ -1,4 +1,4 @@
-package com.samurai;
+package com.samurai.after;
 
 public enum DateUnit {
     DAILY,
