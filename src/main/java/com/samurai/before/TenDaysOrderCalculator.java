@@ -7,7 +7,7 @@ import java.util.Map;
 
 public class TenDaysOrderCalculator {
 
-    public static Map<OrderDate, OrderQuantity> dailySplitBy(TenDaysCustomerOrder tenDaysOrder) {
+    public static Map<OrderDate, OrderQuantity> dailySplitBy(TenDaysOrder tenDaysOrder) {
         var result = new HashMap<OrderDate, OrderQuantity>();
 
         var firstDate = tenDaysOrder.deliveryDate();
