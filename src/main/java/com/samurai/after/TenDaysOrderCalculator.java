@@ -1,7 +1,7 @@
 package com.samurai.after;
 
-import com.samurai.before.TenDaysOrder;
-import com.samurai.before.OrderQuantity;
+import com.samurai.TenDaysOrder;
+import com.samurai.OrderQuantity;
 
 import java.util.List;
 import java.util.Map;

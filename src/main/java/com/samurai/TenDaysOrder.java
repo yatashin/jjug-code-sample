@@ -1,4 +1,4 @@
-package com.samurai.before;
+package com.samurai;
 
 import java.time.LocalDate;
 

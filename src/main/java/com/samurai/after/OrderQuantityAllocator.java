@@ -1,6 +1,6 @@
 package com.samurai.after;
 
-import com.samurai.before.OrderQuantity;
+import com.samurai.OrderQuantity;
 
 import java.util.ArrayList;
 import java.util.List;
