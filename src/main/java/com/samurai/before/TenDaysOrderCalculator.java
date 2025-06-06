@@ -11,7 +11,7 @@ public class TenDaysOrderCalculator {
         var result = new HashMap<OrderDate, OrderQuantity>();
 
         var firstDate = tenDaysOrder.deliveryDate();
-        var tenDaysOrderQuantity = tenDaysOrder.deliveryQuantity();
+        var tenDaysOrderQuantity = tenDaysOrder.deliveryQuantity().quantity();
         var leftQuantity = tenDaysOrderQuantity;
 
         var weekDayCount = countWeekDays(firstDate);

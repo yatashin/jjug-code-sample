@@ -1,10 +1,25 @@
 package com.samurai.after;
 
-import java.time.DayOfWeek;
-import java.time.LocalDate;
-import java.util.HashMap;
+import com.samurai.before.TenDaysOrder;
+import com.samurai.before.OrderQuantity;
+
+import java.util.List;
 import java.util.Map;
 
 public class TenDaysOrderCalculator {
 
+    WorkingDaysCalculator workingDaysCalculator;
+    OrderQuantityAllocator orderQuantityAllocator;
+
+    public TenDaysOrderCalculator() {
+        this.workingDaysCalculator = new WorkingDaysCalculator();
+        this.orderQuantityAllocator = new OrderQuantityAllocator();
+    }
+
+    public List<Map<OrderDate, OrderQuantity>> calculate(TenDaysOrder tenDaysOrder) {
+        var firstDateOfTenDays = tenDaysOrder.deliveryDate();
+        var workingDays = workingDaysCalculator.calculate(firstDateOfTenDays);
+
+        return orderQuantityAllocator.allocate(workingDays, tenDaysOrder.deliveryQuantity());
+    }
 }

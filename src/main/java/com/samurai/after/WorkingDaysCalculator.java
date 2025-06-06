@@ -6,12 +6,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class WorkingDaysCalculator {
-    public List<OrderDate> calculate(OrderDate orderDate) {
+    public List<OrderDate> calculate(LocalDate firstDateOfTenDays) {
         var result = new ArrayList<OrderDate>();
 
-        var date = orderDate.date();
+        var date = firstDateOfTenDays;
         for (var i = 0; i <10; i++) {
-            if (orderDate.date().getMonth() != date.getMonth()) {
+            if (firstDateOfTenDays.getMonth() != date.getMonth()) {
                 break;
             }
 
