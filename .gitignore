@@ -43,3 +43,5 @@ bin/
 /.idea/misc.xml
 /.idea/gradle.xml
 /.idea/vcs.xml
+/.idea/.name
+/.idea/uiDesigner.xml
