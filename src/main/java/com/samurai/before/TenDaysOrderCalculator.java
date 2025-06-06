@@ -7,7 +7,7 @@ import java.util.Map;
 
 public class TenDaysOrderCalculator {
 
-    public static Map<OrderDate, OrderQuantity> dailySplitBy(TenDaysOrder tenDaysOrder) {
+    public Map<OrderDate, OrderQuantity> dailySplitBy(TenDaysOrder tenDaysOrder) {
         var result = new HashMap<OrderDate, OrderQuantity>();
 
         var firstDate = tenDaysOrder.deliveryDate();
@@ -50,7 +50,7 @@ public class TenDaysOrderCalculator {
         return result;
     }
 
-    public static Integer countWeekDays(LocalDate targetDate) {
+    public Integer countWeekDays(LocalDate targetDate) {
         var count = 0;
         var date = targetDate;
 
@@ -69,7 +69,7 @@ public class TenDaysOrderCalculator {
         return count;
     }
 
-    private static boolean isWeekDay(LocalDate date) {
+    private boolean isWeekDay(LocalDate date) {
         return !(date.getDayOfWeek() == DayOfWeek.SATURDAY
                 || date.getDayOfWeek() == DayOfWeek.SUNDAY);
     }
