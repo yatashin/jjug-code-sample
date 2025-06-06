@@ -1,19 +1,17 @@
 package com.samurai.before;
 
-import com.samurai.DateUnit;
-import com.samurai.OrderDate;
-import com.samurai.OrderQuantity;
-import com.samurai.TenDaysOrder;
+import com.samurai.*;
 
 import java.time.DayOfWeek;
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.Map;
+import java.util.List;
 
 public class TenDaysOrderCalculator {
 
-    public Map<OrderDate, OrderQuantity> dailySplitBy(TenDaysOrder tenDaysOrder) {
-        var result = new HashMap<OrderDate, OrderQuantity>();
+    public List<ProductionPlan> dailySplitBy(TenDaysOrder tenDaysOrder) {
+        var result = new ArrayList<ProductionPlan>();
 
         var firstDate = tenDaysOrder.deliveryDate();
         var tenDaysOrderQuantity = tenDaysOrder.deliveryQuantity().quantity();
@@ -45,10 +43,7 @@ public class TenDaysOrderCalculator {
                 quantity = 0;
             }
 
-            var orderQuantity = new OrderQuantity(quantity);
-
-            result.put(orderDate, orderQuantity);
-
+            result.add(new ProductionPlan(orderDate, new OrderQuantity(quantity)));
             leftQuantity -= quantity;
         }
 
