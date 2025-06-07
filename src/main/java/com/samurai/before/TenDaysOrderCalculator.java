@@ -30,7 +30,7 @@ public class TenDaysOrderCalculator {
                 continue;
             }
 
-            var orderDate = new OrderDate(firstDate.plusDays(i), DateUnit.DAILY);
+            var dailyOrderDate = new OrderDate(firstDate.plusDays(i), DateUnit.DAILY);
             var quantity = average;
 
             if (remainder > 0) {
@@ -42,7 +42,8 @@ public class TenDaysOrderCalculator {
                 quantity = 0;
             }
 
-            result.add(new ProductionPlan(orderDate, new OrderQuantity(quantity)));
+            var dailyQuantity = new OrderQuantity(quantity);
+            result.add(new ProductionPlan(dailyOrderDate, dailyQuantity));
             leftQuantity -= quantity;
         }
 
