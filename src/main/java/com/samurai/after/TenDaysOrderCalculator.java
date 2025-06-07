@@ -1,6 +1,7 @@
 package com.samurai.after;
 
 import com.samurai.OrderDate;
+import com.samurai.ProductionPlan;
 import com.samurai.TenDaysOrder;
 import com.samurai.OrderQuantity;
 
@@ -17,7 +18,7 @@ public class TenDaysOrderCalculator {
         this.orderQuantityAllocator = new OrderQuantityAllocator();
     }
 
-    public List<Map<OrderDate, OrderQuantity>> calculate(TenDaysOrder tenDaysOrder) {
+    public List<ProductionPlan> calculate(TenDaysOrder tenDaysOrder) {
         var firstDateOfTenDays = tenDaysOrder.deliveryDate();
         var workingDays = workingDaysCalculator.calculate(firstDateOfTenDays);
 
